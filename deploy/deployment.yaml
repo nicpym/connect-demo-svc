@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: connect-demo-svc
+spec:
+  selector:
+    matchLabels:
+      app: connect-demo-svc
+  template:
+    metadata:
+      labels:
+        app: connect-demo-svc
+    spec:
+      containers:
+      - name: connect-demo-svc
+        image: to-be-replaced:latest
+        ports:
+        - containerPort: 8080
+        env:
+          - name: PORT
+            value: "8080"
